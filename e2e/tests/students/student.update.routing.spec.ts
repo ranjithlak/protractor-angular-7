@@ -8,7 +8,7 @@ import StudentWrite from '../../pages/student.write';
 // test different navigation option from add page
 // side bar navigation is not including
 
-describe('Check Navigations from Add Page ', () => {
+describe('Check Navigations from Update Page ', () => {
     let loginPage = new LoginPage();
     const userData = require('../../data/login.json').credentials.userData;
     const chosen = 0;

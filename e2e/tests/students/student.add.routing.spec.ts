@@ -12,7 +12,6 @@ describe('Check Navigations from Add Page ', () => {
     let loginPage = new LoginPage();
     let studentAddPage = new StudentWrite();
     const userData = require('../../data/login.json').credentials.userData;
-    const studentData = require('../../data/student.json');
 
     beforeAll(async () => {
         await loginPage.open();

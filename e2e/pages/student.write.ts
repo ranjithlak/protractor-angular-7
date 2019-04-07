@@ -18,7 +18,7 @@ export default class StudentWrite extends SharedStudent {
         this.email = element(by.css("input[formControlName=email]"));
         this.phone = element(by.css("input[formControlName=phone]"));
         this.submitButton = element(by.css("button[type='submit']"));
-        this.backButton = element(by.css('.w3-button.w3-green.custom-button.margin-right'));
+        this.backButton = element(by.css('.w3-button.w3-green.custom-button'));
     };
 
     // make sure that page is opened before manipulating it.
