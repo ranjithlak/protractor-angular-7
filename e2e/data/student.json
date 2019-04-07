@@ -66,7 +66,8 @@
         "invalidFirstName" : "Please enter 3 to 50 characters",
         "invalidLastName" : "Please enter 3 to 50 characters",
         "invalidEmail" : "Please enter valid email address",
-        "invalidPhone" : "Please enter valid phone number"
+        "invalidPhone" : "Please enter valid phone number",
+        "noUser" : "No students found with search"
     },
     "headers": {
         "detail": "Student Details",
