@@ -3,7 +3,7 @@
 import { browser } from 'protractor';
 import LoginPage from '../../pages/login.page';
 import Helpers from '../../helpers';
-import StudentWrite from '../../pages/student.write';
+import StudentWrite from '../../pages/student.write.page';
 
 describe('Update New User ', () => {
     let loginPage = new LoginPage();
@@ -55,7 +55,7 @@ describe('Update New User ', () => {
         expect(await studentEditPage.getToastText()).toContain(studentData.messages.studentUpdate);
     });
 
-    xit('check user in List Page', async () => {
+    it('check user in List Page', async () => {
         // count does not change
 
     });

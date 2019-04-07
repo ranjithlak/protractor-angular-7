@@ -5,7 +5,7 @@ import ListPage from '../../pages/student.list.page';
 import Helpers from '../../helpers';
 import { browser } from 'protractor';
 import StudentDetail from '../../pages/student.details.page';
-import StudentWritePage from '../../pages/student.write';
+import StudentWritePage from '../../pages/student.write.page';
 
 describe('Authorization : Login is Mandatory to navigate to all pages', () => {
     let loginPage = new LoginPage();

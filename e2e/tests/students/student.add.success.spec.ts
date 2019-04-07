@@ -5,7 +5,7 @@ import LoginPage from '../../pages/login.page';
 import StudentDetail from '../../pages/student.details.page';
 import ListPage from '../../pages/student.list.page';
 import Helpers from '../../helpers';
-import StudentWrite from '../../pages/student.write';
+import StudentWrite from '../../pages/student.write.page';
 
 // Functional Test Checks Process of user creation
 // UI behavior checked in a different test

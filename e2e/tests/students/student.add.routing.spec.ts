@@ -3,7 +3,7 @@
 import { browser } from 'protractor';
 import LoginPage from '../../pages/login.page';
 import Helpers from '../../helpers';
-import StudentWrite from '../../pages/student.write';
+import StudentWrite from '../../pages/student.write.page';
 
 // test different navigation option from add page
 // side bar navigation is not including

@@ -1,7 +1,7 @@
 'use strict';
 
 import LoginPage from '../../pages/login.page';
-import  StudentAddPage from '../../pages/student.write';
+import  StudentAddPage from '../../pages/student.write.page';
 import Helpers from '../../helpers';
 import { browser } from 'protractor';
 

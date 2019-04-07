@@ -3,7 +3,7 @@
 import { browser, protractor, WebDriver } from 'protractor';
 import LoginPage from '../../pages/login.page';
 import Helpers from '../../helpers';
-import StudentWrite from '../../pages/student.write';
+import StudentWrite from '../../pages/student.write.page';
 
 // Functional Test Checks Process of user creation
 // UI behavior checked in a different test
