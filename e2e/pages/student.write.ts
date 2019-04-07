@@ -10,7 +10,7 @@ export default class StudentWrite extends SharedStudent {
     backButton: ElementFinder;
     submitButton: ElementFinder;
 
-    constructor(id?: string) {
+    constructor(id?: number) {
         const url = (id === undefined ? browser.params.routes.add : browser.params.routes.update + '/' + id);
         super(url);
         this.firstName = element(by.css("input[formControlName=first_name]"));
