@@ -15,9 +15,13 @@ export default abstract class Shared {
         this.alerts = element.all(by.css('.w3-panel.w3-red'));
     };
 
-    navigateTo() {
-        return browser.get(this.url);
-    };
+    abstract isloaded();
+
+    open() {
+        return browser.get(this.url).then(() => {
+            return this.isloaded();
+        });
+    };   
 
     getToastText() {
         return browser.wait(

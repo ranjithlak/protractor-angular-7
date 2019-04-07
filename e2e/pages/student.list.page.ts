@@ -18,15 +18,13 @@ export default class StudentList extends SharedStudent {
 
     // make sure page is loaded before manupulating its element
 
-    open() {
-        return this.navigateTo().then(() => {
-            return browser.wait(protractor.ExpectedConditions.and(
-                protractor.ExpectedConditions.visibilityOf(this.filter),
-                protractor.ExpectedConditions.visibilityOf(this.addNewStudentButton),
-                protractor.ExpectedConditions.visibilityOf(this.grid.first()),
-                this.SideBarIsVisible()
-            ), 5000);
-        });
+    isloaded() {
+        return browser.wait(protractor.ExpectedConditions.and(
+            protractor.ExpectedConditions.visibilityOf(this.filter),
+            protractor.ExpectedConditions.visibilityOf(this.addNewStudentButton),
+            protractor.ExpectedConditions.visibilityOf(this.grid.first()),
+            this.SideBarIsVisible()
+        ), 5000)
     };
 
     filterStudent(s: string) {

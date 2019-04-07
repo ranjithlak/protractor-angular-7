@@ -6,7 +6,7 @@ import SharedStudent from './shared/shared.student';
 export default class StudentDetail extends SharedStudent {
 
     id: number;
-    url : string;
+    url: string;
 
     editButton: ElementFinder;
     backButton: ElementFinder;
@@ -17,7 +17,7 @@ export default class StudentDetail extends SharedStudent {
     email: ElementFinder;
     phone: ElementFinder;
     cardTitle: ElementFinder;
-    
+
     private grid: ElementArrayFinder = element.all(by.css('.w3-table.w3-bordered tr'));
 
     // Student Details Page is defined by the user id
@@ -37,15 +37,13 @@ export default class StudentDetail extends SharedStudent {
     };
 
     // make sure elements are visible before manipulating the web elements.
-    open() {
-        return this.navigateTo().then(() => {
-            return browser.wait(protractor.ExpectedConditions.and(
-                protractor.ExpectedConditions.visibilityOf(this.editButton),
-                protractor.ExpectedConditions.visibilityOf(this.userCardDetails),
-                protractor.ExpectedConditions.visibilityOf(this.userCardDetails),
-                this.SideBarIsVisible()
-            ), 5000);
-        });
+    isloaded() {
+        return browser.wait(protractor.ExpectedConditions.and(
+            protractor.ExpectedConditions.visibilityOf(this.editButton),
+            protractor.ExpectedConditions.visibilityOf(this.userCardDetails),
+            protractor.ExpectedConditions.visibilityOf(this.userCardDetails),
+            this.SideBarIsVisible()
+        ), 5000);
     };
 
     clickEditUser() {

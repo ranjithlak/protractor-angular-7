@@ -22,18 +22,17 @@ export default class StudentWrite extends SharedStudent {
     };
 
     // make sure that page is opened before manipulating it.
-    open() {
-        return this.navigateTo().then(() => {
-            return browser.wait(protractor.ExpectedConditions.and(
-                protractor.ExpectedConditions.visibilityOf(this.firstName),
-                protractor.ExpectedConditions.visibilityOf(this.lastName),
-                protractor.ExpectedConditions.visibilityOf(this.email),
-                protractor.ExpectedConditions.visibilityOf(this.phone),
-                protractor.ExpectedConditions.visibilityOf(this.submitButton),
-                this.SideBarIsVisible()
-            ), 5000);
-        });
-    };
+
+    isloaded() {
+        return browser.wait(protractor.ExpectedConditions.and(
+            protractor.ExpectedConditions.visibilityOf(this.firstName),
+            protractor.ExpectedConditions.visibilityOf(this.lastName),
+            protractor.ExpectedConditions.visibilityOf(this.email),
+            protractor.ExpectedConditions.visibilityOf(this.phone),
+            protractor.ExpectedConditions.visibilityOf(this.submitButton),
+            this.SideBarIsVisible()
+        ), 5000);
+    }
 
     submitButtonIsEnabled() {
         return this.submitButton.isEnabled();

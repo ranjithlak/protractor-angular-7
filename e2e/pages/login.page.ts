@@ -16,15 +16,13 @@ export default class LoginPage extends SharedPage {
 
     //    open page and wait until all page elements are visible
     //    tests starts only when page is loaded - reduce false positive
-    open() {
-        return this.navigateTo().then(() => {
-            return browser.wait(protractor.ExpectedConditions.and(
-                protractor.ExpectedConditions.visibilityOf(this.email),
-                protractor.ExpectedConditions.visibilityOf(this.password),
-                protractor.ExpectedConditions.visibilityOf(this.loginBtn),
-            ));
-        });
-    };
+    isloaded() {
+        return browser.wait(protractor.ExpectedConditions.and(
+            protractor.ExpectedConditions.visibilityOf(this.email),
+            protractor.ExpectedConditions.visibilityOf(this.password),
+            protractor.ExpectedConditions.visibilityOf(this.loginBtn),
+        ), 5000);
+    }
 
     setEmail(email: string) {
         return this.email.clear().then(() => {

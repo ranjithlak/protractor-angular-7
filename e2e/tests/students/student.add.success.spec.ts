@@ -1,7 +1,9 @@
 'use strict';
 
-import { browser, protractor, WebDriver } from 'protractor';
+import { browser } from 'protractor';
 import LoginPage from '../../pages/login.page';
+import StudentDetail from '../../pages/student.details.page';
+import ListPage from '../../pages/student.list.page';
 import Helpers from '../../helpers';
 import StudentWrite from '../../pages/student.write';
 
@@ -11,6 +13,7 @@ import StudentWrite from '../../pages/student.write';
 describe('Create New User ', () => {
     let loginPage = new LoginPage();
     let studentAddPage = new StudentWrite();
+    let listPage = new ListPage();
     const userData = require('../../data/login.json').credentials.userData;
     const studentData = require('../../data/student.json');
 
@@ -43,10 +46,14 @@ describe('Create New User ', () => {
         expect(await studentAddPage.getToastText()).toContain(studentData.messages.studentAdded);
     });
 
-    xit('check user in List Page', async () => {
-        // count changes
-        // to be checked later
-        // once list page is added
+    it('checks user is saved with entred values', async () => {
+        await listPage.isloaded();
+
+        expect(await listPage.countStudent()).toEqual(6);
+        expect(await listPage.getFirstName(1)).toEqual(studentData.aStudent.validData.firstName);
+        expect(await listPage.getLastName(1)).toEqual(studentData.aStudent.validData.lastName);
+        expect(await listPage.getEmail(1)).toEqual(studentData.aStudent.validData.email);
+        expect(await listPage.getPhone(1)).toContain(studentData.aStudent.validData.phone);
     });
 
 });
