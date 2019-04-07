@@ -37,7 +37,7 @@ export default abstract class SharedStudent extends Shared {
         ).then(() => { return this.userListLink.click() });
     };
 
-    clickSideaddUserLink() {
+    clickSideBarAddUserLink() {
         return browser.wait(
             protractor.ExpectedConditions.elementToBeClickable(this.addUserLink), 2000
         ).then(() => { return this.addUserLink.click() });
