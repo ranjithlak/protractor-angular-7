@@ -63,6 +63,11 @@ export default class StudentList extends SharedStudent {
         if (i === 0) i = 1;
         return this.getRow(i).get(3).getText();
     };
+
+    clickOnUserRow(i: number) {
+        if (i === 0) i = 1;
+        return this.getRow(i).get(2).click();
+    }
     // row(0) is the header, so if 0 set 1
     clickUpdateStudent(i: number) {
         if (i === 0) i = 1;
