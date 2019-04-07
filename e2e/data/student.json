@@ -60,7 +60,8 @@
     "messages": {
         "studentDetailsFetched": "Student Details Fetched",
         "studentAdded": "Student Successfully Added",
-        "studentUpdate": "Student Successfully Updated"
+        "studentUpdate": "Student Successfully Updated",
+        "existingEmail": "Email Address Already In Use"
     },
     "warnings" : {
         "invalidFirstName" : "Please enter 3 to 50 characters",
