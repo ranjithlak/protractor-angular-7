@@ -33,6 +33,12 @@ export default class StudentList extends SharedStudent {
         });
     };
 
+    clickAddNewUserButton() {
+        return browser.wait(
+            protractor.ExpectedConditions.elementToBeClickable(this.addNewStudentButton), 2000
+        ).then(() => { return this.addNewStudentButton.click() });
+    };
+
     private getRow(i: number) {
         return this.grid.get(i).all(by.css('td'));
     };
