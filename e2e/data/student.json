@@ -1,0 +1,53 @@
+{
+    "studentsList": [
+        {
+            "id": 1,
+            "first_name": "Sangwin",
+            "last_name": "Gawande",
+            "email": "sangwin@yopmail.com",
+            "phone": "9503733178",
+            "department": "Science"
+        },
+        {
+            "id": 2,
+            "first_name": "Oman",
+            "last_name": "Umir",
+            "email": "oman@yopmail.com",
+            "phone": "8574889658",
+            "department": "Commerce"
+        },
+        {
+            "id": 3,
+            "first_name": "Tina",
+            "last_name": "Dillon",
+            "email": "tina@yopmail.com",
+            "phone": "7485889658",
+            "department": "Science"
+        },
+        {
+            "id": 3,
+            "first_name": "John",
+            "last_name": "Doe",
+            "email": "john@yopmail.com",
+            "phone": "9685589748",
+            "department": "Arts"
+        },
+        {
+            "id": 5,
+            "first_name": "Peter",
+            "last_name": "Parker",
+            "email": "peter@yopmail.com",
+            "phone": "8595856547",
+            "department": "Engineering"
+        }
+    ],
+    "messages" : {
+        "studentDetailsFetched" : "Student Details Fetched"
+    },
+    "headers" : {
+        "detail" : "Student Details",
+        "list" : "Student List",
+        "add" : "Student Registration",
+        "update" : "Student Update"
+    }
+}

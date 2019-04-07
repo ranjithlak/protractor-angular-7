@@ -8,6 +8,11 @@ import { browser } from 'protractor';
 
 export default class Helpers {
 
+    // set key-value pair in local storage
+    static setLocalStorage(key, value) {
+        return browser.executeScript(`window.localStorage.setItem('${key}', '${JSON.stringify(value)}');`);
+    };
+
     // get value from local storage
     static getLocalStorage(key) {
         return browser.executeScript(`return window.localStorage.getItem("${key}");`);
