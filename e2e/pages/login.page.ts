@@ -21,7 +21,7 @@ export default class LoginPage extends SharedPage {
             protractor.ExpectedConditions.visibilityOf(this.email),
             protractor.ExpectedConditions.visibilityOf(this.password),
             protractor.ExpectedConditions.visibilityOf(this.loginBtn),
-        ), 5000);
+        ), browser.params.timeouts.medium);
     }
 
     setEmail(email: string) {
@@ -38,8 +38,9 @@ export default class LoginPage extends SharedPage {
 
     submit() {
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(this.loginBtn), 2000
-        ).then(() => { return this.loginBtn.click() });
+            protractor.ExpectedConditions.elementToBeClickable(this.loginBtn)
+            , browser.params.timeouts.medium)
+            .then(() => { return this.loginBtn.click() });
     };
 
 };

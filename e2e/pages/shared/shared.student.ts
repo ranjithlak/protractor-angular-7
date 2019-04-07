@@ -27,19 +27,19 @@ export default abstract class SharedStudent extends Shared {
 
     logout() {
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(this.logoutLink), 2000
+            protractor.ExpectedConditions.elementToBeClickable(this.logoutLink), browser.params.timeouts.medium
         ).then(() => { return this.logoutLink.click() });
     };
 
     clickSideBarUserLink() {
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(this.userListLink), 2000
+            protractor.ExpectedConditions.elementToBeClickable(this.userListLink), browser.params.timeouts.medium
         ).then(() => { return this.userListLink.click() });
     };
 
     clickSideBarAddUserLink() {
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(this.addUserLink), 2000
+            protractor.ExpectedConditions.elementToBeClickable(this.addUserLink), browser.params.timeouts.medium
         ).then(() => { return this.addUserLink.click() });
     };
 

@@ -11,6 +11,11 @@ exports.config = {
       'update': '/update',
       'detail': '/detail',
       'login': '/login'
+    },
+    timeouts : {
+      small : 1000,
+      medium : 5000,
+      large : 10000
     }
   },
 

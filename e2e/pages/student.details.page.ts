@@ -43,18 +43,18 @@ export default class StudentDetail extends SharedStudent {
             protractor.ExpectedConditions.visibilityOf(this.userCardDetails),
             protractor.ExpectedConditions.visibilityOf(this.userCardDetails),
             this.SideBarIsVisible()
-        ), 5000);
+        ), browser.params.timeouts.medium);
     };
 
     clickEditUser() {
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(this.editButton), 2000
+            protractor.ExpectedConditions.elementToBeClickable(this.editButton), browser.params.timeouts.medium
         ).then(() => { return this.editButton.click() });
     };
 
     clickBack() {
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(this.backButton), 2000
+            protractor.ExpectedConditions.elementToBeClickable(this.backButton), browser.params.timeouts.medium
         ).then(() => { return this.backButton.click() });
     };
 

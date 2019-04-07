@@ -28,7 +28,7 @@ export default abstract class Shared {
         return browser.wait(
             protractor.ExpectedConditions.and(
                 protractor.ExpectedConditions.visibilityOf(this.toast),
-            ), 5000)
+            ), browser.params.timeouts.medium)
             .then(() => {
                 return browser.wait(
                     this.toast.getText()
@@ -37,7 +37,7 @@ export default abstract class Shared {
                         }).then(() => {
                             return this.toast.getText();
                         })
-                )
+                    , browser.params.timeouts.medium)
             });
     };
 

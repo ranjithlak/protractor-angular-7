@@ -9,7 +9,7 @@ import Helpers from '../../helpers';
 describe('Login Fail With Wrong Credentials', () => {
     let loginPage = new LoginPage();
     const loginData = require('../../data/login.json');
-    
+
     beforeAll(async () => {
         // clear Local Storage to make sure user is not redirected to main page
         await loginPage.open();
@@ -17,7 +17,7 @@ describe('Login Fail With Wrong Credentials', () => {
     });
 
     beforeEach(async () => {
-        await browser.wait(protractor.ExpectedConditions.invisibilityOf(loginPage.toast))
+        await browser.wait(protractor.ExpectedConditions.invisibilityOf(loginPage.toast), browser.params.timeouts.medium)
     });
 
     it('Wrong Username', async () => {
@@ -29,7 +29,7 @@ describe('Login Fail With Wrong Credentials', () => {
         expect(await loginPage.getToastText()).toContain(loginData.message.failure);
     });
 
-    
+
 
     it('Wrong Password', async () => {
         await loginPage.setEmail(loginData.credentials.userData.email);

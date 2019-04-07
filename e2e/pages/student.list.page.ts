@@ -24,7 +24,7 @@ export default class StudentList extends SharedStudent {
             protractor.ExpectedConditions.visibilityOf(this.addNewStudentButton),
             protractor.ExpectedConditions.visibilityOf(this.grid.first()),
             this.SideBarIsVisible()
-        ), 5000)
+        ), browser.params.timeouts.medium)
     };
 
     filterStudent(s: string) {
@@ -35,7 +35,7 @@ export default class StudentList extends SharedStudent {
 
     clickAddNewUserButton() {
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(this.addNewStudentButton), 2000
+            protractor.ExpectedConditions.elementToBeClickable(this.addNewStudentButton), browser.params.timeouts.medium
         ).then(() => { return this.addNewStudentButton.click() });
     };
 
@@ -73,7 +73,7 @@ export default class StudentList extends SharedStudent {
         if (i === 0) i = 1;
         let btn = this.getRow(i).get(5);
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(btn), 2000
+            protractor.ExpectedConditions.elementToBeClickable(btn), browser.params.timeouts.medium
         ).then(() => { return btn.click() });
     };
     // row(0) is the header, so if 0 set 1
@@ -81,7 +81,7 @@ export default class StudentList extends SharedStudent {
         if (i === 0) i = 1;
         let btn = this.getRow(i).get(6);
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(btn), 2000
+            protractor.ExpectedConditions.elementToBeClickable(btn), browser.params.timeouts.medium
         ).then(() => { return btn.click() });
     };
 

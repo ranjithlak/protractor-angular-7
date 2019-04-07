@@ -31,7 +31,7 @@ export default class StudentWrite extends SharedStudent {
             protractor.ExpectedConditions.visibilityOf(this.phone),
             protractor.ExpectedConditions.visibilityOf(this.submitButton),
             this.SideBarIsVisible()
-        ), 5000);
+        ), browser.params.timeouts.medium);
     }
 
     submitButtonIsEnabled() {
@@ -40,7 +40,7 @@ export default class StudentWrite extends SharedStudent {
 
     submit() {
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(this.submitButton), 2000
+            protractor.ExpectedConditions.elementToBeClickable(this.submitButton), browser.params.timeouts.medium
         ).then(() => { return this.submitButton.click() });
     };
 
@@ -86,7 +86,7 @@ export default class StudentWrite extends SharedStudent {
 
     clickBack() {
         return browser.wait(
-            protractor.ExpectedConditions.elementToBeClickable(this.backButton), 2000
+            protractor.ExpectedConditions.elementToBeClickable(this.backButton), browser.params.timeouts.medium
         ).then(() => { return this.backButton.click() });
     };
 };

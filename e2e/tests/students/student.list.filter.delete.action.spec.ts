@@ -30,7 +30,7 @@ describe('List User - Navigate to Edit Page', () => {
     it('approve user deletion', async () => {
         await listPage.clickDeleteUser(1);
 
-        await browser.wait(protractor.ExpectedConditions.alertIsPresent(), 10000);
+        await browser.wait(protractor.ExpectedConditions.alertIsPresent(), browser.params.timeouts.medium);
         await browser.switchTo().alert().accept();
 
         expect(await listPage.countStudent()).toEqual(4);
@@ -40,7 +40,7 @@ describe('List User - Navigate to Edit Page', () => {
     it('cancel user deletion', async () => {
         await listPage.clickDeleteUser(1);
 
-        await browser.wait(protractor.ExpectedConditions.alertIsPresent(), 10000);
+        await browser.wait(protractor.ExpectedConditions.alertIsPresent(), browser.params.timeouts.medium);
         await browser.switchTo().alert().dismiss();
 
         expect(await listPage.countStudent()).toEqual(5);
