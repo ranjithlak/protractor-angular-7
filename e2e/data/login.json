@@ -1,7 +1,9 @@
 {
     "credentials" : {
-        "correctUsername" : "admin@yopmail.com",
-        "correctPassword" : "admin123",
+        "userData" : {
+            "email" : "admin@yopmail.com",
+            "password" : "admin123"
+        },
         "wrongUsername" : "admin1@yopmail.com",
         "wrongPassword" : "admin1234",
         "invalidEmail" : "admin1@yopmail",

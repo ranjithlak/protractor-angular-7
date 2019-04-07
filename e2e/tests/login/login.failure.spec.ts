@@ -20,7 +20,7 @@ describe('Login Fail With Wrong Credentials', () => {
 
     it('Wrong Username', async () => {
         await loginPage.setEmail(loginData.credentials.wrongUsername);
-        await loginPage.setPassword(loginData.credentials.correctPassword);
+        await loginPage.setPassword(loginData.credentials.userData.password);
         await loginPage.submit();
 
         expect(await loginPage.getToastText()).toContain(loginData.message.success);
@@ -28,7 +28,7 @@ describe('Login Fail With Wrong Credentials', () => {
     });
 
     it('Wrong Password', async () => {
-        await loginPage.setEmail(loginData.credentials.correctUsername);
+        await loginPage.setEmail(loginData.credentials.userData.email);
         await loginPage.setPassword(loginData.credentials.wrongPassword);
         await loginPage.submit();
 

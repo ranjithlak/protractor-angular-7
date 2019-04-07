@@ -46,8 +46,8 @@ describe('Check Login Form Behavior', () => {
 
     it('Behavior : Right Credentials Format', async () => {
 
-        await loginPage.setEmail(loginData.credentials.correctUsername);
-        await loginPage.setPassword(loginData.credentials.correctPassword);
+        await loginPage.setEmail(loginData.credentials.userData.email);
+        await loginPage.setPassword(loginData.credentials.userData.password);
 
         expect(await loginPage.loginBtn.isEnabled()).toBe(true);
         expect(await loginPage.getAlertNumber()).toEqual(0);

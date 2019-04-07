@@ -21,8 +21,8 @@ describe('Login Successful with right Credentials ', () => {
     });
 
     it('right credentials', async () => {
-        await loginPage.setEmail(loginData.credentials.correctUsername);
-        await loginPage.setPassword(loginData.credentials.correctPassword);
+        await loginPage.setEmail(loginData.credentials.userData.email);
+        await loginPage.setPassword(loginData.credentials.userData.password);
         await loginPage.submit();
 
         expect(await browser.getCurrentUrl()).toEqual(listUrl);
