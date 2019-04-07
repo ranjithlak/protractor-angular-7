@@ -1,0 +1,21 @@
+{
+    "credentials" : {
+        "correctUsername" : "admin@yopmail.com",
+        "correctPassword" : "admin123",
+        "wrongUsername" : "admin1@yopmail.com",
+        "wrongPassword" : "admin1234",
+        "invalidEmail" : "admin1@yopmail",
+        "invalidPasswordLength" : "12345",
+        "invalidPasswordNoNumber" : "abcdef"
+    },
+
+    "warnings" : {
+        "invalidEmail" : "Please enter valid email address",
+        "invalidPassword" : "Password must be at least 6 characters long, and contain a number"
+    },
+
+    "message" : {
+        "success" : "Logged In Successfully",
+        "failure" : "Invalid Credentials"
+    }
+}
