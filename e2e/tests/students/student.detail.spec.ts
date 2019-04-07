@@ -5,7 +5,7 @@ import StudentDetail from '../../pages/student.details.page';
 import LoginPage from '../../pages/login.page';
 import Helpers from '../../helpers';
 
-describe('Display User Detail for the student ', () => {
+xdescribe('Display User Detail for the student ', () => {
     let loginPage = new LoginPage();
     const studentData = require('../../data/student.json');
     const userData = require('../../data/login.json').credentials.userData;

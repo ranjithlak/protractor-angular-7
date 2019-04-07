@@ -41,13 +41,36 @@
             "department": "Engineering"
         }
     ],
-    "messages" : {
-        "studentDetailsFetched" : "Student Details Fetched"
+    "aStudent": {
+        "validData": {
+            "firstName": "Salim",
+            "lastName": "Zouari",
+            "email": "salim@zouari.com",
+            "phone": "8574889658"
+        },
+        "invalidData": {
+            "firstName2char": "sl",
+            "lastName2char": "zl",
+            "firstName51char": "Lorem ipsum dolor sit amet, consectetur massa nuncn",
+            "lastName51char": "Lorem ipsum dolor sit amet, consectetur massa nuncl",
+            "email": "salim@zouari",
+            "phone": "123456"
+        }
     },
-    "headers" : {
-        "detail" : "Student Details",
-        "list" : "Student List",
-        "add" : "Student Registration",
-        "update" : "Student Update"
+    "messages": {
+        "studentDetailsFetched": "Student Details Fetched",
+        "studentAdded": "Student Successfully Added"
+    },
+    "warnings" : {
+        "invalidFirstName" : "Please enter 3 to 50 characters",
+        "invalidLastName" : "Please enter 3 to 50 characters",
+        "invalidEmail" : "Please enter valid email address",
+        "invalidPhone" : "Please enter valid phone number"
+    },
+    "headers": {
+        "detail": "Student Details",
+        "list": "Student List",
+        "add": "Student Registration",
+        "update": "Student Update"
     }
 }
