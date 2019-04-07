@@ -2,13 +2,17 @@
 
 import { browser } from 'protractor';
 import LoginPage from '../../pages/login.page';
+import ListPage from '../../pages/student.list.page';
+
 import Helpers from '../../helpers';
 import StudentWrite from '../../pages/student.write.page';
 
 describe('Update New User ', () => {
     let loginPage = new LoginPage();
+    let listPage = new ListPage();
     const userData = require('../../data/login.json').credentials.userData;
     const studentData = require('../../data/student.json');
+    
     const student = studentData.studentsList[0];
     const aStudent = studentData.aStudent.validData;
     const listPageUrl = browser.baseUrl + browser.params.routes.list;
@@ -56,7 +60,13 @@ describe('Update New User ', () => {
     });
 
     it('check user in List Page', async () => {
-        // count does not change
+        await listPage.isloaded();
+
+        expect(await listPage.countStudent()).toEqual(5);
+        expect(await listPage.getFirstName(1)).toEqual(aStudent.firstName);
+        expect(await listPage.getLastName(1)).toEqual(aStudent.lastName);
+        expect(await listPage.getPhone(1)).toContain(aStudent.phone);
+        expect(await listPage.getEmail(1)).toEqual(aStudent.email);
 
     });
 
