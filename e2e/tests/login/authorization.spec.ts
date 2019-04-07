@@ -9,10 +9,6 @@ import StudentWritePage from '../../pages/student.write';
 
 describe('Authorization : Login is Mandatory to navigate to all pages', () => {
     let loginPage = new LoginPage();
-    let detailPage = new StudentDetail(0);
-    let studentAddPage = new StudentWritePage();
-    let studentEditPage = new StudentWritePage(0);
-    let listPage = new ListPage();
 
     beforeAll(async () => {
         await loginPage.open();
@@ -37,7 +33,7 @@ describe('Authorization : Login is Mandatory to navigate to all pages', () => {
     });
 
     it('Edit User Page requires login', async () => {
-        await browser.get(browser.params.routes.edit + '/0');
+        await browser.get(browser.params.routes.update + '/0');
 
         expect(await Helpers.getCurrentUrl()).toContain(browser.params.routes.login);
     });

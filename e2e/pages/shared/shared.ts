@@ -21,12 +21,24 @@ export default abstract class Shared {
         return browser.get(this.url).then(() => {
             return this.isloaded();
         });
-    };   
+    };
 
+    // get Toast Text only when text length > 0
     getToastText() {
         return browser.wait(
-            protractor.ExpectedConditions.visibilityOf(this.toast), 2000
-        ).then(() => { return this.toast.getText() });
+            protractor.ExpectedConditions.and(
+                protractor.ExpectedConditions.visibilityOf(this.toast),
+            ), 5000)
+            .then(() => {
+                return browser.wait(
+                    this.toast.getText()
+                        .then((v) => {
+                            return (v.length > 0 === true)
+                        }).then(() => {
+                            return this.toast.getText();
+                        })
+                )
+            });
     };
 
     getAlerts(i: number) {

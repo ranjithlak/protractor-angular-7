@@ -1,6 +1,6 @@
 'use strict';
 
-import { browser } from 'protractor';
+import { browser, protractor } from 'protractor';
 import LoginPage from '../../pages/login.page'
 import Helpers from '../../helpers';
 
@@ -9,13 +9,15 @@ import Helpers from '../../helpers';
 describe('Login Fail With Wrong Credentials', () => {
     let loginPage = new LoginPage();
     const loginData = require('../../data/login.json');
-    const loginUrl = browser.baseUrl + browser.params.routes.login;
-
-
+    
     beforeAll(async () => {
         // clear Local Storage to make sure user is not redirected to main page
         await loginPage.open();
         await Helpers.clearLocalStorage();
+    });
+
+    beforeEach(async () => {
+        await browser.wait(protractor.ExpectedConditions.invisibilityOf(loginPage.toast))
     });
 
     it('Wrong Username', async () => {
@@ -23,9 +25,11 @@ describe('Login Fail With Wrong Credentials', () => {
         await loginPage.setPassword(loginData.credentials.userData.password);
         await loginPage.submit();
 
-        expect(await loginPage.getToastText()).toContain(loginData.message.success);
-        expect(await Helpers.getCurrentUrl()).toEqual(loginUrl);
+        expect(await Helpers.getCurrentUrl()).toContain(browser.params.routes.login);
+        expect(await loginPage.getToastText()).toContain(loginData.message.failure);
     });
+
+    
 
     it('Wrong Password', async () => {
         await loginPage.setEmail(loginData.credentials.userData.email);
@@ -33,7 +37,7 @@ describe('Login Fail With Wrong Credentials', () => {
         await loginPage.submit();
 
         expect(await loginPage.getToastText()).toContain(loginData.message.failure);
-        expect(await Helpers.getCurrentUrl()).toEqual(loginUrl);
+        expect(await Helpers.getCurrentUrl()).toContain(browser.params.routes.login);
     });
 
 });
