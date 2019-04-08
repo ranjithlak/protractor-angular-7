@@ -1,9 +1,12 @@
 const { SpecReporter } = require('jasmine-spec-reporter');
+const HtmlReporter = require('protractor-beautiful-reporter');
+
+
 
 exports.config = {
   // disable promise manger - allows usage of async/await
   SELENIUM_PROMISE_MANAGER: false,
-  
+
   params: {
     routes: {
       'list': '/',
@@ -12,10 +15,10 @@ exports.config = {
       'detail': '/detail',
       'login': '/login'
     },
-    timeouts : {
-      small : 1000,
-      medium : 5000,
-      large : 10000
+    timeouts: {
+      small: 1000,
+      medium: 5000,
+      large: 10000
     }
   },
 
@@ -39,6 +42,9 @@ exports.config = {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
+    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: false, displayDuration : true } }));
+    jasmine.getEnv().addReporter(new HtmlReporter({
+      baseDirectory: require('path').join(__dirname, './htmlReport'),
+    }).getJasmine2Reporter());
   }
 };
