@@ -27,8 +27,17 @@ exports.config = {
     './tests/**/*.spec.ts'
   ],
   capabilities: {
-    'browserName': 'chrome'
+    'browserName': 'chrome',
+    // 'shardTestFiles': true,
+    // 'maxInstances': 5
   },
+  // maxInstances : 2,
+  // multiCapabilities: [{
+  //   'browserName': 'firefox'
+  // }, {
+  //   'browserName': 'chrome'
+  // }],
+
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
@@ -42,7 +51,7 @@ exports.config = {
     require('ts-node').register({
       project: require('path').join(__dirname, './tsconfig.e2e.json')
     });
-    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: false, displayDuration : true } }));
+    jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: false, displayDuration: true } }));
     jasmine.getEnv().addReporter(new HtmlReporter({
       baseDirectory: require('path').join(__dirname, './htmlReport'),
     }).getJasmine2Reporter());
